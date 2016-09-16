@@ -31,4 +31,19 @@ public class facade {
 
     }
 
+    public Person findPerson(int id) {
+        EntityManager em = emf.createEntityManager();
+        Person p = em.find(Person.class, id);
+        return p;
+    }
+
+    public void editPerson() {
+
+    }
+
+    public void deletePerson(int id) {
+        EntityManager em = emf.createEntityManager();
+        Person p = em.find(Person.class, id);
+        em.remove(p);
+    }
 }
